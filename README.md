@@ -48,7 +48,7 @@ DLSimpleURLAudioPlayer is designed to work with a View Controller. Simply create
 ```obj-c
 
 
-//You can, for example, createa vector of Audio objects somewhere
+//You can, for example, create a vector of Audio objects somewhere
 
 NSInteger CurrentSelectAudio = 0;
     
