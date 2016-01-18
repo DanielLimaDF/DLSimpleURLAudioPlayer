@@ -17,13 +17,22 @@
 @synthesize audioList;
 @synthesize table;
 
+@synthesize distanceDownloadTop;
+@synthesize songDownloader;
+@synthesize internetAvailability;
+@synthesize statusWeb;
+
 - (void)viewDidLoad {
     
     loader = [[jsonLoad alloc]init];
     loader.delegate = self;
-    [loader loadAudios];
     
     audioList = [[NSMutableArray alloc]init];
+    
+    songDownloader = [[AudioDownloader alloc]init];
+    songDownloader.delegate = self;
+    
+    [self testInternetConnection];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -33,6 +42,54 @@
     self.navigationController.navigationBar.hidden = YES;
     [super viewWillAppear:animated];
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+}
+
+
+
+
+- (void)testInternetConnection{
+    internetAvailability = [Reachability reachabilityWithHostname:@"dlsimpleurlaudioplayer.42noticias.com"];
+    
+    // Internet is reachable
+    internetAvailability.reachableBlock = ^(Reachability*reach)
+    {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Yayyy, we have the interwebs!");
+            
+            statusWeb = [NSNumber numberWithInt:1];
+            
+            [loader loadAudios];
+            [songDownloader startDownload];
+            
+        });
+    };
+    
+    // Internet is not reachable
+    internetAvailability.unreachableBlock = ^(Reachability*reach)
+    {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Someone broke the internet :(");
+            
+            statusWeb = [NSNumber numberWithInt:2];
+            
+            [loader loadOffline];
+            [self audioDonwloaderDone];
+            
+        });
+    };
+    
+    [internetAvailability startNotifier];
+}
+
+
+
+
 
 //Table BEGIN
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -117,13 +174,14 @@
 }
 
 - (UIImage*)loadImageFromLocalFile:(NSString *)file{
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *libraryCacheDirectory = [paths objectAtIndex:0];
     NSString* path = [libraryCacheDirectory stringByAppendingPathComponent:[NSString stringWithFormat: @"%@",file]];
     UIImage* image = [UIImage imageWithContentsOfFile:path];
     return image;
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -131,6 +189,17 @@
 }
 
 
+- (void)audioDonwloaderDone{
+    
+    [self.view layoutIfNeeded];
+    
+    distanceDownloadTop.constant = 1000;
+    [UIView animateWithDuration:.4
+                     animations:^{
+                         [self.view layoutIfNeeded]; // Called on parent view
+                     }];
+    
+}
 
 
 

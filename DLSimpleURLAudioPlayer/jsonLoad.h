@@ -28,6 +28,7 @@
 
 -(id)init;
 -(void)loadAudios;
+-(void)loadOffline;
 
 -(void)audioItemLoaded;
 

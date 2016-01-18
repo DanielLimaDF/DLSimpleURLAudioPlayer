@@ -62,7 +62,31 @@
     
     currentAudio = [audioQueue objectAtIndex:currentAudioIndex];
     
-    player = [[AVPlayer alloc]initWithURL:[NSURL URLWithString:currentAudio.audioURL]];
+    //Check if audio file exist in Documents folder
+    NSString *fileName = [currentAudio.audioURL lastPathComponent];
+    
+    NSArray *pathsUsr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentFolder = [pathsUsr objectAtIndex:0];
+    
+    NSString* localFile = [documentFolder stringByAppendingPathComponent:fileName];
+    
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:localFile];
+    
+    if(fileExists){
+        
+        NSURL *localFileUrl = [[NSURL alloc] initFileURLWithPath: localFile];
+        
+        AVAsset *asset = [AVURLAsset URLAssetWithURL:localFileUrl options:nil];
+        AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
+        
+        player = [AVPlayer playerWithPlayerItem:anItem];
+        
+        NSLog(@"Playing from LOCAL DOCUMENTS FOLDER");
+        
+    }else{
+        player = [[AVPlayer alloc]initWithURL:[NSURL URLWithString:currentAudio.audioURL]];
+    }
+    
     
     // Subscribe to the AVPlayerItem's DidPlayToEndTime notification.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:player.currentItem];

@@ -40,8 +40,6 @@
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
     
-    
-    
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
@@ -55,6 +53,15 @@
                                                       JSONObjectWithData:loadedData
                                                       options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves
                                                       error:&error];
+                                          
+                                          
+                                          
+                                          
+                                          //Store data for offline usage:
+                                          [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"offlineJson"];
+                                          
+                                          
+                                          
                                           
                                           if( error ){
                                               NSLog(@"%@", [error localizedDescription]);
@@ -138,6 +145,76 @@
                                       }];
     [dataTask resume];
 }
+
+
+
+
+-(void)loadOffline{
+    
+    NSData *storedData = [[NSUserDefaults standardUserDefaults] dataForKey:@"offlineJson"];
+    
+    NSError *error;
+    
+    [loadedData appendData:storedData];
+    registerDictionary = [NSJSONSerialization
+                          JSONObjectWithData:loadedData
+                          options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves
+                          error:&error];
+    
+    if( error ){
+        NSLog(@"%@", [error localizedDescription]);
+    }else{
+        
+        
+        
+        
+        NSMutableArray *result = [[NSMutableArray alloc]init];
+        result = registerDictionary[@"data"];
+        
+        NSNumber *acount = [NSNumber numberWithInteger:[result count]];
+        
+        totalAudios = [acount intValue];
+        
+        //Create audio list
+        for (int i = 0; i < [result count]; i++) {
+            
+            NSDictionary *currentData = result[i];
+            
+            Audio *a = [[Audio alloc]init];
+            
+            a.audioURL = currentData[@"fileUrl"];
+            a.title = currentData[@"title"];
+            a.author = currentData[@"author"];
+            a.cover = currentData[@"cover"];
+            
+            if(![a.cover isKindOfClass:[NSNull class]]){
+                
+                NSString *fileName = [a.cover lastPathComponent];
+                a.coverFileName = fileName;
+                
+            }
+            
+            [self audioItemLoaded];
+            
+            [audioList addObject:a];
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
+
 
 -(void)audioItemLoaded{
     

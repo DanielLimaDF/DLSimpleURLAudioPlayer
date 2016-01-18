@@ -62,6 +62,11 @@
 		EB3C2A121BF56FF000D4BC80 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3C2A111BF56FF000D4BC80 /* AVFoundation.framework */; };
 		EB3C2A141BF56FF800D4BC80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3C2A131BF56FF800D4BC80 /* Foundation.framework */; };
 		EB3C2A161BF575C700D4BC80 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3C2A151BF575C700D4BC80 /* MediaPlayer.framework */; };
+		EBA3C13A1C4B522B001A4818 /* downloadButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA3C1371C4B522B001A4818 /* downloadButton.png */; };
+		EBA3C13B1C4B522B001A4818 /* downloadButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA3C1381C4B522B001A4818 /* downloadButton@2x.png */; };
+		EBA3C13C1C4B522B001A4818 /* downloadButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA3C1391C4B522B001A4818 /* downloadButton@3x.png */; };
+		EBA3C1411C4B5A71001A4818 /* AudioDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3C1401C4B5A71001A4818 /* AudioDownloader.m */; };
+		EBA3C1441C4C6EF8001A4818 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA3C1431C4C6EF8001A4818 /* Reachability.m */; };
 		EBBE01A91BFC28320084FEEE /* Track_Repeat_On_Track.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBE01A61BFC28320084FEEE /* Track_Repeat_On_Track.png */; };
 		EBBE01AA1BFC28320084FEEE /* Track_Repeat_On_Track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBE01A71BFC28320084FEEE /* Track_Repeat_On_Track@2x.png */; };
 		EBBE01AB1BFC28320084FEEE /* Track_Repeat_On_Track@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBE01A81BFC28320084FEEE /* Track_Repeat_On_Track@3x.png */; };
@@ -153,6 +158,13 @@
 		EB3C2A111BF56FF000D4BC80 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EB3C2A131BF56FF800D4BC80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB3C2A151BF575C700D4BC80 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		EBA3C1371C4B522B001A4818 /* downloadButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downloadButton.png; sourceTree = "<group>"; };
+		EBA3C1381C4B522B001A4818 /* downloadButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downloadButton@2x.png"; sourceTree = "<group>"; };
+		EBA3C1391C4B522B001A4818 /* downloadButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downloadButton@3x.png"; sourceTree = "<group>"; };
+		EBA3C13F1C4B5A71001A4818 /* AudioDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDownloader.h; sourceTree = "<group>"; };
+		EBA3C1401C4B5A71001A4818 /* AudioDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioDownloader.m; sourceTree = "<group>"; };
+		EBA3C1421C4C6EF8001A4818 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		EBA3C1431C4C6EF8001A4818 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		EBBE01A61BFC28320084FEEE /* Track_Repeat_On_Track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Track_Repeat_On_Track.png; sourceTree = "<group>"; };
 		EBBE01A71BFC28320084FEEE /* Track_Repeat_On_Track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Track_Repeat_On_Track@2x.png"; sourceTree = "<group>"; };
 		EBBE01A81BFC28320084FEEE /* Track_Repeat_On_Track@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Track_Repeat_On_Track@3x.png"; sourceTree = "<group>"; };
@@ -219,9 +231,11 @@
 		EB3C29781BF5233400D4BC80 /* DLSimpleURLAudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				EBA3C1451C4C6F12001A4818 /* Reachability */,
 				EB246AE11BF7B33A00DCF167 /* Json Loader */,
 				EB3C29B41BF5414F00D4BC80 /* img */,
 				EB3C29AC1BF5353800D4BC80 /* Audio Objects */,
+				EBA3C13E1C4B5A3A001A4818 /* Audio Downloader */,
 				EB3C297C1BF5233400D4BC80 /* AppDelegate.h */,
 				EB3C297D1BF5233400D4BC80 /* AppDelegate.m */,
 				EB3C297F1BF5233400D4BC80 /* ViewController.h */,
@@ -281,6 +295,9 @@
 		EB3C29B41BF5414F00D4BC80 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				EBA3C1371C4B522B001A4818 /* downloadButton.png */,
+				EBA3C1381C4B522B001A4818 /* downloadButton@2x.png */,
+				EBA3C1391C4B522B001A4818 /* downloadButton@3x.png */,
 				EBBE01A61BFC28320084FEEE /* Track_Repeat_On_Track.png */,
 				EBBE01A71BFC28320084FEEE /* Track_Repeat_On_Track@2x.png */,
 				EBBE01A81BFC28320084FEEE /* Track_Repeat_On_Track@3x.png */,
@@ -326,6 +343,24 @@
 				EB3C29DF1BF5416100D4BC80 /* volume2@3x.png */,
 			);
 			name = img;
+			sourceTree = "<group>";
+		};
+		EBA3C13E1C4B5A3A001A4818 /* Audio Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3C13F1C4B5A71001A4818 /* AudioDownloader.h */,
+				EBA3C1401C4B5A71001A4818 /* AudioDownloader.m */,
+			);
+			name = "Audio Downloader";
+			sourceTree = "<group>";
+		};
+		EBA3C1451C4C6F12001A4818 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3C1421C4C6EF8001A4818 /* Reachability.h */,
+				EBA3C1431C4C6EF8001A4818 /* Reachability.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA3C13B1C4B522B001A4818 /* downloadButton@2x.png in Resources */,
 				EB3C2A081BF5416100D4BC80 /* volume2.png in Resources */,
 				EB3C29EC1BF5416100D4BC80 /* Controls_Rewind@3x.png in Resources */,
 				EB3C2A091BF5416100D4BC80 /* volume2@2x.png in Resources */,
@@ -445,7 +481,9 @@
 				EB3C2A041BF5416100D4BC80 /* Track_Shuffle_On@3x.png in Resources */,
 				EB3C29EA1BF5416100D4BC80 /* Controls_Rewind.png in Resources */,
 				EB3C2A051BF5416100D4BC80 /* volume.png in Resources */,
+				EBA3C13C1C4B522B001A4818 /* downloadButton@3x.png in Resources */,
 				EB3C29F11BF5416100D4BC80 /* Controls_Skip@2x.png in Resources */,
+				EBA3C13A1C4B522B001A4818 /* downloadButton.png in Resources */,
 				EB3C29F51BF5416100D4BC80 /* itemSlider@3x.png in Resources */,
 				EB3C2A061BF5416100D4BC80 /* volume@2x.png in Resources */,
 				EB3C2A021BF5416100D4BC80 /* Track_Shuffle_On.png in Resources */,
@@ -513,7 +551,9 @@
 				EB3C29B21BF535A000D4BC80 /* Audio.m in Sources */,
 				EB3C297E1BF5233400D4BC80 /* AppDelegate.m in Sources */,
 				EB3C297B1BF5233400D4BC80 /* main.m in Sources */,
+				EBA3C1411C4B5A71001A4818 /* AudioDownloader.m in Sources */,
 				EB3C2A0D1BF56C2900D4BC80 /* DLSimpleURLAudioPlayerViewController.m in Sources */,
+				EBA3C1441C4C6EF8001A4818 /* Reachability.m in Sources */,
 				EB3C29AF1BF5358600D4BC80 /* jsonLoad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
