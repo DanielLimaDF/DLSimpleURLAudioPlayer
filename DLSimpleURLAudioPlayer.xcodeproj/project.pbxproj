@@ -234,7 +234,7 @@
 				EBA3C1451C4C6F12001A4818 /* Reachability */,
 				EB246AE11BF7B33A00DCF167 /* Json Loader */,
 				EB3C29B41BF5414F00D4BC80 /* img */,
-				EB3C29AC1BF5353800D4BC80 /* Audio Objects */,
+				EB3C29AC1BF5353800D4BC80 /* Audio Classes */,
 				EBA3C13E1C4B5A3A001A4818 /* Audio Downloader */,
 				EB3C297C1BF5233400D4BC80 /* AppDelegate.h */,
 				EB3C297D1BF5233400D4BC80 /* AppDelegate.m */,
@@ -281,7 +281,7 @@
 			path = DLSimpleURLAudioPlayerUITests;
 			sourceTree = "<group>";
 		};
-		EB3C29AC1BF5353800D4BC80 /* Audio Objects */ = {
+		EB3C29AC1BF5353800D4BC80 /* Audio Classes */ = {
 			isa = PBXGroup;
 			children = (
 				EB3C29B01BF535A000D4BC80 /* Audio.h */,
@@ -289,7 +289,7 @@
 				EB3C2A0E1BF56EEF00D4BC80 /* DLSimpleURLAudioPlayerController.h */,
 				EB3C2A0F1BF56EEF00D4BC80 /* DLSimpleURLAudioPlayerController.m */,
 			);
-			name = "Audio Objects";
+			name = "Audio Classes";
 			sourceTree = "<group>";
 		};
 		EB3C29B41BF5414F00D4BC80 /* img */ = {

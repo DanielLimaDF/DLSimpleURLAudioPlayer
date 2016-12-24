@@ -88,9 +88,9 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="7Fp-fY-Bz1"/>
+                                                <exclude reference="99G-vH-N55"/>
                                                 <exclude reference="Hbi-xO-yWl"/>
                                                 <exclude reference="dOA-y9-Ffk"/>
-                                                <exclude reference="99G-vH-N55"/>
                                             </mask>
                                         </variation>
                                     </activityIndicatorView>
