@@ -15,7 +15,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>{
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, audioDownloaderDelegate, loaderAudioDelegate>{
     NSInteger selectedAudio;
 }
 

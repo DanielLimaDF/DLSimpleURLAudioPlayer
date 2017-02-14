@@ -52,7 +52,7 @@
 
 
 - (void)testInternetConnection{
-    internetAvailability = [Reachability reachabilityWithHostname:@"dlsimpleurlaudioplayer.42noticias.com"];
+    internetAvailability = [Reachability reachabilityWithHostname:@"dlsimpleurlaudioplayer.42noticias.mobi"];
     
     // Internet is reachable
     internetAvailability.reachableBlock = ^(Reachability*reach)

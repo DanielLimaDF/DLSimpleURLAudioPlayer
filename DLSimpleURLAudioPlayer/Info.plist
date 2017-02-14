@@ -28,7 +28,7 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>dlsimpleurlaudioplayer.42noticias.com</key>
+			<key>dlsimpleurlaudioplayer.42noticias.mobi</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>

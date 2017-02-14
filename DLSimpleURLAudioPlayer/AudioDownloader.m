@@ -17,7 +17,7 @@
 
 -(id)init{
     
-    url = [NSString stringWithFormat:@"http://dlsimpleurlaudioplayer.42noticias.com/mp3/hinonacional.mp3"];
+    url = [NSString stringWithFormat:@"http://dlsimpleurlaudioplayer.42noticias.mobi/mp3/hinonacional.mp3"];
     
     return self;
 }

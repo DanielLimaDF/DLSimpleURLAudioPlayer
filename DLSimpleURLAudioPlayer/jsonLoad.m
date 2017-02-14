@@ -33,7 +33,7 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://dlsimpleurlaudioplayer.42noticias.com/audios.php"]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://dlsimpleurlaudioplayer.42noticias.mobi/audios.php"]]];
     
     [request setHTTPMethod:@"POST"];
     
