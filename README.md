@@ -4,11 +4,11 @@ License: MIT
 
 Platform: iOs
 
-##Very simple way to play audios from urls in iOs
+## Very simple way to play audios from urls in iOs
 
 DLSimpleURLAudioPlayer can play audios files from urls using `AVPlayer`. You can set the artist's name , audio name and cover art.
 
-####The Player View Controller (DLSimpleURLAudioPlayerViewController)
+#### The Player View Controller (DLSimpleURLAudioPlayerViewController)
 
 iPhone 5s<br>
 ![Alt][screenshot2]
@@ -19,7 +19,7 @@ iPad<br>
 [screenshot1]: https://github.com/DanielLimaDF/DLSimpleURLAudioPlayer/blob/master/Screenshots/ipad_1.png
 [screenshot2]: https://github.com/DanielLimaDF/DLSimpleURLAudioPlayer/blob/master/Screenshots/iphone5s1.png
 
-####Device Control Center
+#### Device Control Center
 
 iPhone<br>
 ![Alt][screenshot3]
@@ -30,7 +30,7 @@ iPad<br>
 [screenshot3]: https://github.com/DanielLimaDF/DLSimpleURLAudioPlayer/blob/master/Screenshots/iphone6s2.PNG
 [screenshot4]: https://github.com/DanielLimaDF/DLSimpleURLAudioPlayer/blob/master/Screenshots/ipad_3.jpg
 
-####Device Lock Screen
+#### Device Lock Screen
 
 iPhone 6<br>
 ![Alt][screenshot5]
