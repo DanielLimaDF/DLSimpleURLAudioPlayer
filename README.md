@@ -88,6 +88,10 @@ Audio *song3 = [[Audio alloc]init];
 
 I recommend that you download and run the project to better understand how it works.
 
+## Offline content
+
+DLSimpleURLAudioPlayer also supports offline content. If you download the audio file the framework will identify that it exists locally and will play it from the device's Documents folder instead of loading the file again.
+
 ## License
 
 DLSimpleURLAudioPlayer is available under the MIT license. See the LICENSE file for more info.
